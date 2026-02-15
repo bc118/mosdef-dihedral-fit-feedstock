@@ -1,8 +1,8 @@
-{% set python_min = '3.10' %}
+{% set python_min = '3.11' %}
 {% set python_max = '3.12' %}
 {% set name = "mosdef-dihedral-fit" %}
-{% set version = "0.1.13" %}
-{% set build_number = "2" %}
+{% set version = "0.2.0" %}
+{% set build_number = "0" %}
 
 package:
   name: {{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/GOMC-WSU/MoSDeF-dihedral-fit/archive/{{ version }}.tar.gz
-  sha256: c2a9259369c073a53ac7714869bd3638b07502394440738dd315c6fda8f3d20f
+  sha256: 725b7f92bb84df9a6f70df5d01e061032e07a1aa9437a747a3fa424b26c44786
 
 build:
   noarch: python
@@ -25,11 +25,16 @@ requirements:
     - python >={{ python_min }},<{{ python_max }}
     - netcdf4
     - vmd-python
+    - numpy<2
     - mosdef-gomc =1.4.0
+    - foyer =0.12.1
+    - forcefield-utilities =0.3.0
+    - gmso =0.12.4
+    - mbuild =0.17.1
+    - setuptools <82
     - pytest
     - pytest-cov
     - coverage
-    - gsd =3.3.2
 
 test:
   imports:
