@@ -25,7 +25,8 @@ requirements:
     - python >={{ python_min }},<{{ python_max }}
     - netcdf4
     - vmd-python
-    - numpy<2
+    - numpy <2
+    - mjtraj <=1.10.3
     - mosdef-gomc =1.4.0
     - foyer =0.12.1
     - forcefield-utilities =0.3.0
